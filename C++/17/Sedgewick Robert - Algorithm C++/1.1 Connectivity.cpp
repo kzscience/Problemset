@@ -16,7 +16,7 @@ int main() {
             }
         }
            
-        std::cout << " " << p << " " << q << std::endl;
+        std::cout << " " << p << " " << q <<" : ";
 
         for (int j = 0; j < size; j++) {
             std::cout << id[j] << " ";

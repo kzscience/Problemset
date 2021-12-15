@@ -1,28 +1,25 @@
 #include <iostream>
+#include <array>
+#include <numeric>
 
 int main() {
-    int i,j, p, q, size;
-    std::cin >> size;
-    int* arr = new int[size];
-
-    for (i = 0; i < size; i++) {
-        arr[i] = i;
-    }
-
+    const int size = 10;
+    int p, q;
+    std::array<int, size> id;
+    std::iota(id.begin(), id.end(), 0);
     while (std::cin >> p >> q) {
-        for (i = p; i != arr[i]; i = arr[i]);
-        for (j = q; j != arr[j]; j = arr[j]);
+        int i, j;
+        for (i = 0; i != id[i]; i = id[i]);
+        for (j = q; j != id[j]; j = id[j]);
 
-        arr[i] = j;
-
-        std::cout << "  " << p << "-" << q << " : ";
+        id[i] = j;
+           
+        std::cout << " " << p << " " << q << " : ";
 
         for (int j = 0; j < size; j++) {
-            std::cout << arr[j] << " ";
+            std::cout << id[j] << " ";
         }
         std::cout << std::endl;
     }
-    delete[]arr;
-    
 
 }

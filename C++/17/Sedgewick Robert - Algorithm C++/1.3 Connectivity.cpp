@@ -1,39 +1,34 @@
 #include <iostream>
-using namespace std;
+#include <array>
+#include <numeric>
 
 int main() {
-    int i,j, p, q, size;
-    std::cin >> size;
-    int* arr = new int[size];
-    int* arr_sz = new int[size];
-
-    for (i = 0; i < size; i++) {
-        arr[i] = i;
-        arr_sz[i] = 1;
-    }
-
+    const int size = 10;
+    int p, q;
+    std::array<int, size> id;
+    std::array<int, size> sz;
+    sz.fill(1);
+    std::iota(id.begin(), id.end(), 0);
     while (std::cin >> p >> q) {
-        for (i = p; i != arr[i]; i = arr[i]);
-        for (j = q; j != arr[j]; j = arr[j]);
+        int i, j;
+        for (i = 0; i != id[i]; i = id[i]);
+        for (j = q; j != id[j]; j = id[j]);
 
-        if (arr_sz[i] < arr_sz[j]) {
-            arr[i] = j; 
-            arr_sz[j] += arr_sz[i];
+        if (sz[i] < sz[j]) {
+            id[i] = j;
+            sz[j] += sz[i];
         }
         else {
-            arr[j] = i; 
-            arr_sz[i] += arr_sz[j];
+            id[j] = i;
+            sz[i] += sz[j];
         }
-
-        std::cout << "  " << p << "-" << q << " : ";
+           
+        std::cout << " " << p << " " << q << " : ";
 
         for (int j = 0; j < size; j++) {
-            std::cout << arr[j] << " ";
+            std::cout << id[j] << " ";
         }
         std::cout << std::endl;
     }
 
-
-    delete[]arr;
-    delete[]arr_sz;
 }

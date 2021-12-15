@@ -1,7 +1,7 @@
 #include <iostream>
 int main()
 {
-
+// Limit 95
 	unsigned __int64* arr = new unsigned __int64[100];
 
 	arr[0] = 0;

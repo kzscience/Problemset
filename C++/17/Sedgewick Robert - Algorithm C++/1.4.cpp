@@ -16,8 +16,8 @@ int main() {
         }
             
         for (j = q; j != id[j]; j = id[j]) {
-
-        } id[j] = id[id[j]];
+            id[j] = id[id[j]];
+        } 
            
 
         if (sz[i] < sz[j]) {

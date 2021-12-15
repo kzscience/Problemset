@@ -1,4 +1,3 @@
-//  Give the output that the connectivity algorithm should produce for input pairs 0-2, 1-4, 2-5, 3-6, 0-4, 6-0, and 1-3.
 #include <iostream>
 #include <array>
 #include <numeric>

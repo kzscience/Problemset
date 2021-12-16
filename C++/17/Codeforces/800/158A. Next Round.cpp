@@ -17,5 +17,5 @@ int main()
     }
     cout << s;
     delete[] arr;
-    return 0;
+    
 }

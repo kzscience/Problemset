@@ -1,13 +1,13 @@
 class Solution {
 public:
-    string longestCommonPrefix(const vector<string>& strs) {
+    string longestCommonPrefix(const std::vector<std::string>& strs) {
         if (strs.size() == 0) {
             return "";
         }
-        string prefix = strs[0];
+        std::string prefix = strs[0];
 
         for (int i = 1; i < strs.size(); ++i) {
-            string s = strs[i];
+            std::string s = strs[i];
             if (s.size() == 0 || prefix == "") {
                 return "";
             }
